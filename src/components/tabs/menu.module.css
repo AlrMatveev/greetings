@@ -1,0 +1,9 @@
+.menu {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+.button {
+  padding: 10px;
+  cursor: pointer;
+}

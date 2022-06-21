@@ -1,0 +1,9 @@
+.container {
+  position: relative;
+  height: 30vh;
+  margin: 10px;
+}
+.body {
+  position: absolute;
+  width: 100%;
+}
