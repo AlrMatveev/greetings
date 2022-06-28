@@ -11,7 +11,7 @@ import { Container } from "@mui/material";
 
 const tabs = [
   {
-    name: "About Me",
+    name: "AboutMe",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     body: <About />,
@@ -41,7 +41,7 @@ function App() {
   const [count, setCount] = useState(0);
   return (
     <Container maxWidth="md">
-      <Tabs tabs={tabs} setPage={setPage} setCount={setCount} />
+      <Tabs tabs={tabs} page={page} setPage={setPage} setCount={setCount} />
       <Head count={count} setCount={setCount} page={page} />
       <Body tabs={tabs} page={page} />
       {/* <Footer /> */}

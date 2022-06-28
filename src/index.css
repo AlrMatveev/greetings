@@ -33,25 +33,21 @@ button {
   outline: none;
 }
 
-.head-enter {
-  opacity: 0;
-  transform: translateY(-10px);
-  transition: 1000ms;
+.menu-enter {
+  transform: translateY(-100%);
+  transition: 200ms;
 }
-.head-enter-active {
-  opacity: 1;
+.menu-enter-active {
   transform: translateY(0);
-  transition: 1000ms;
+  transition: 200ms;
 }
-.head-exit {
-  opacity: 1;
+.menu-exit {
   transform: translateY(0);
-  transition: 1000ms;
+  transition: 200ms;
 }
-.head-exit-active {
-  opacity: 0;
-  transform: translateY(-10px);
-  transition: 1000ms;
+.menu-exit-active {
+  transform: translateY(-100%);
+  transition: 200ms;
 }
 
 .body-enter {
