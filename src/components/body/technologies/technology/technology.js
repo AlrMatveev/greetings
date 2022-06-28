@@ -5,7 +5,8 @@ import { useState } from "react";
 function Technology({ item }) {
   const [rotate, setRotate] = useState(0);
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
     setRotate(rotate + 90);
     const cube = document.getElementById(item.name);
     cube.style.transform = "rotateY(" + rotate + "deg)";

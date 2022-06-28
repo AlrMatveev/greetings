@@ -38,10 +38,11 @@ const tabs = [
 
 function App() {
   const [page, setPage] = useState(tabs[0].name);
+  const [count, setCount] = useState(0);
   return (
-    <Container maxWidth="lg">
-      <Tabs tabs={tabs} setPage={setPage} />
-      <Head tabs={tabs} page={page} />
+    <Container maxWidth="md">
+      <Tabs tabs={tabs} setPage={setPage} setCount={setCount} />
+      <Head count={count} setCount={setCount} page={page} />
       <Body tabs={tabs} page={page} />
       {/* <Footer /> */}
     </Container>

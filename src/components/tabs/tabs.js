@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import styles from "./menu.module.css";
 
-function Tabs({ tabs, setPage }) {
+function Tabs({ tabs, setCount, setPage }) {
   return (
     <Box className={styles.menu}>
       {tabs.map((tab) => {
@@ -9,7 +9,10 @@ function Tabs({ tabs, setPage }) {
           <Box
             className={styles.button}
             key={tab.name}
-            onClick={() => setPage(tab.name)}
+            onClick={() => {
+              setPage(tab.name);
+              setCount(0);
+            }}
           >
             {tab.name}
           </Box>

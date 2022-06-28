@@ -1,27 +1,27 @@
 import { Box } from "@mui/material";
-import { CSSTransition } from "react-transition-group";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import styles from "./head.module.css";
+import { useState, useEffect, useRef } from "react";
+import "./head.css";
 
-function Head({ tabs, page }) {
+const str = "Some Text";
+
+function Head({ count, setCount, page }) {
+  const arr = page.split("");
+
+  if (count < arr.length) setTimeout(() => setCount(count + 1), 100);
+
   return (
     <Box className={styles.container}>
-      {tabs.map((tab) => {
-        return (
-          <CSSTransition
-            key={tab.name}
-            in={page === tab.name}
-            timeout={1000}
-            classNames="head"
-            unmountOnExit
-            mountOnEnter
-          >
-            <Box className={styles.body}>
-              <Box className={styles.header}>{tab.name}</Box>
-              <Box className={styles.description}>{tab.description}</Box>
-            </Box>
-          </CSSTransition>
-        );
-      })}
+      <TransitionGroup className={styles.header}>
+        {arr.slice(0, count).map((e, i) => {
+          return (
+            <CSSTransition key={i} timeout={1000} classNames="my-node">
+              <Box>{e}</Box>
+            </CSSTransition>
+          );
+        })}
+      </TransitionGroup>
     </Box>
   );
 }

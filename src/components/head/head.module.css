@@ -1,12 +1,12 @@
 .container {
+  display: flex;
+  align-items: center;
+  justify-content: left;
   position: relative;
-  height: 30vh;
   margin: 10px;
-}
-.body {
-  position: absolute;
 }
 .header {
   font-size: 30px;
-  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
 }

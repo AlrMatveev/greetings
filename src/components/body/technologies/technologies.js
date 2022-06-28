@@ -11,10 +11,10 @@ const items = [
 
 function Technologies() {
   return (
-    <Grid container spacing={10}>
+    <Grid container>
       {items.map((item) => {
         return (
-          <Grid key={item.name} item xs={12} md={6}>
+          <Grid key={item.name} item xs={12}>
             <Technology item={item} />
           </Grid>
         );
