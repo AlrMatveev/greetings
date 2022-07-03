@@ -1,7 +1,8 @@
-import { Box } from "@mui/material";
+import { Box, Slider } from "@mui/material";
 import styles from "./menu.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { Stage, Layer, Rect, Circle } from "react-konva";
 
 function Tabs({ tabs, page, setCount, setPage }) {
   const handleClick = (name) => {
@@ -11,16 +12,24 @@ function Tabs({ tabs, page, setCount, setPage }) {
     }
   };
 
-  console.log(tabs);
-
   return (
     <>
-      <Box className={styles.line}>
-        <Box className={styles.thumb}></Box>
-        {tabs.map((e) => {
-          return <Box className={styles.item}>{e.name}</Box>;
-        })}
-      </Box>
+      {/* <Stage width={window.innerWidth} height={300}>
+        <Layer>
+          {tabs.map((tab) => {
+            return (
+              <Circle
+                x={Math.random() * window.innerWidth}
+                y={100}
+                stroke="red"
+                radius={50}
+                onClick={() => handleClick(tab.name)}
+              />
+            );
+          })}
+        </Layer>
+      </Stage> */}
+
       <Box className={styles.menu}>
         {tabs.map((tab) => {
           return (

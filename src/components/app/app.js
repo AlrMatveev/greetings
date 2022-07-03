@@ -40,12 +40,14 @@ function App() {
   const [page, setPage] = useState(tabs[0].name);
   const [count, setCount] = useState(0);
   return (
-    <Container maxWidth="md">
-      <Tabs tabs={tabs} page={page} setPage={setPage} setCount={setCount} />
-      <Head count={count} setCount={setCount} page={page} />
-      <Body tabs={tabs} page={page} />
-      {/* <Footer /> */}
-    </Container>
+    <>
+      <Container maxWidth="md">
+        <Tabs tabs={tabs} page={page} setPage={setPage} setCount={setCount} />
+        <Head count={count} setCount={setCount} page={page} />
+        <Body tabs={tabs} page={page} />
+        {/* <Footer /> */}
+      </Container>
+    </>
   );
 }
 

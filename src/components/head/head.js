@@ -4,8 +4,6 @@ import styles from "./head.module.css";
 import { useState, useEffect, useRef } from "react";
 import "./head.css";
 
-const str = "Some Text";
-
 function Head({ count, setCount, page }) {
   const arr = page.split("");
 
