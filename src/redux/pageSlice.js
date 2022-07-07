@@ -38,16 +38,13 @@ export const pageSlice = createSlice({
     loadPage: (state, action) => {
       state.load = action.payload;
     },
-    increment: (state) => {
-      state.scroll += 1;
-    },
-    decrement: (state) => {
-      state.scroll -= 1;
+    setScroll: (state, action) => {
+      state.scroll = action.payload;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { loadPage, increment, decrement } = pageSlice.actions;
+export const { loadPage, setScroll } = pageSlice.actions;
 
 export default pageSlice.reducer;
