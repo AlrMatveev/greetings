@@ -4,9 +4,9 @@ import reactLogo from "../../../images/react.png";
 
 const items = [
   { name: "React", image: reactLogo },
-  { name: "Redux" },
-  { name: "MUI" },
-  { name: "Next" },
+  // { name: "Redux" },
+  // { name: "MUI" },
+  // { name: "Next" },
 ];
 
 function Technologies() {

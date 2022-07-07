@@ -3,14 +3,25 @@ import styles from "./menu.module.css";
 import { useState, useEffect } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { Stage, Layer, Rect, Circle } from "react-konva";
+import { useSelector, useDispatch } from "react-redux";
+import { setLoad, increment, decrement } from "../../redux/pageSlice";
 
 function Tabs({ tabs, page, setCount, setPage }) {
+  const scroll = useSelector((state) => state.page.scroll);
+  const dispatch = useDispatch();
+
   const handleClick = (name) => {
     if (page !== name) {
       setPage(name);
       setCount(0);
     }
   };
+
+  useEffect(() => {
+    window.addEventListener("wheel", (evt) => {
+      +evt.deltaY > 0 ? dispatch(increment()) : dispatch(decrement());
+    });
+  }, []);
 
   return (
     <>
@@ -29,8 +40,9 @@ function Tabs({ tabs, page, setCount, setPage }) {
           })}
         </Layer>
       </Stage> */}
-
+      {/* {page2} */}
       <Box className={styles.menu}>
+        {scroll}
         {tabs.map((tab) => {
           return (
             <Box
